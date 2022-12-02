@@ -1,5 +1,7 @@
 body {
-  background-color: #f9f7fe;
+  background: linear-gradient(90deg, #7effb2, #2cd9ff);
+  background-size: 400% 400%;
+  animation: anim 2.5s infinite ease-in-out;
   font-family: sans-serif;
 }
 h1 {
@@ -23,14 +25,20 @@ footer {
   text-align: center;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
 }
 .container {
   max-width: 600px;
   margin: 60px auto;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 30px;
   box-shadow: 0px 7px 29px rgba(100, 100, 111, 0.2);
-  border-radius: 10px;
+  border-radius: 35px;
 }
 
 .city {
@@ -41,18 +49,37 @@ footer {
   border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 }
 
+.city:hover {
+  transform: scale(1.2);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 25px;
+  border-radius: 6px;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  color: black;
+}
+
 .city:last-child {
   border: none;
 }
+
 .date {
-  opacity: 0.7;
+  color: white;
 }
 .time {
   font-size: 48px;
   font-weight: bold;
 }
-.time small {
-  font-size: 18px;
-  vertical-align: middle;
-  line-height: 16px;
+
+@keyframes anim {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
 }
